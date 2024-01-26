@@ -7,14 +7,18 @@ namespace CJ.Scripts.GamePlay.State
     /// </summary>
     public class GamePlayState_Running : GamePlayState
     {
-        /// <summary>
-        /// 게임 플레이 상태에 들어온 이후 지난 시간
-        /// </summary>
-        private float playTime = 0;
+        private float _playTime = 0;                // 게임 플레이 상태에 들어온 이후 지난 시간
+        private float _nextStockUpdateTime = 15;    // 다음 주식 시장 업데이트 시간
 
         protected override void Update()
         {
-            playTime += Time.fixedDeltaTime;
+            _playTime += Time.fixedDeltaTime;
+
+            if (Mathf.Abs(_playTime - _nextStockUpdateTime) < float.Epsilon)
+            {
+                // TODO: 주식 업데이트
+                _nextStockUpdateTime += GameRule.Instance.stockUpdateInterval;
+            }
         }
     }
 }

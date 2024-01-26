@@ -9,7 +9,9 @@ namespace CJ.Scripts.GamePlay.State
     {
         protected override void Enter()
         {
-            // TODO: Init Data
+            // TODO: 데이터 초기화
+
+            // TODO: 농작물 랜덤 위치 생성
 
             // 초기화 이후에는 바로 Ready 상태로 이동
             nextStatus = new GamePlayState_Ready();
