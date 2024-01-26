@@ -19,6 +19,12 @@ namespace CJ.Scripts.GamePlay.State
                 // TODO: 주식 업데이트
                 _nextStockUpdateTime += GameRule.Instance.stockUpdateInterval;
             }
+
+            if (_playTime >= GameRule.Instance.gamePlayTime)
+            {
+                nextStatus = new GamePlayState_Finish();
+                nextEvent = Event.Exit;
+            }
         }
     }
 }
