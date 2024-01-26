@@ -15,8 +15,6 @@ public class TestVege : MonoBehaviour, iInteraction
     
     private Canvas currentCanvas = null;
 
-
-
     private void Start()
     {
         //var vegeInstance = Instantiate(gameObject,Random(InitPosition ,Vector3.zero,Vector3.one),Quaternion.identity);
@@ -56,8 +54,6 @@ public class TestVege : MonoBehaviour, iInteraction
         // Vege Animation
         transform.position = InitPosition;
     }
-
-    
 }
 
 //public Vector3 Random(Vector3 myVector, Vector3 min, Vector3 max)

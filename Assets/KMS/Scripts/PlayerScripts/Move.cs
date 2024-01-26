@@ -8,7 +8,6 @@ public class Move : MonoBehaviour
     PlayerAnimation playerAnimation;
     float movePower = 5f;
 
-
     private float velocityLimit = 0.3f;
     private float walkDeaccelerationOnX;
     private float walkDeaccelerationOnY;
@@ -19,7 +18,8 @@ public class Move : MonoBehaviour
     private void Start()
     {
         playerAnimation = GetComponent<PlayerAnimation>();
-        //playerImage.flipX = false;
+        playerImage = GetComponent<SpriteRenderer>();
+        playerImage.flipX = false;
     }
 
     void Update()
@@ -27,13 +27,9 @@ public class Move : MonoBehaviour
         PlayerMove();
     }
 
-
     void PlayerMove()
     {
         moveVelocity = Vector3.zero;
-
-
-
 
         var inputX = Input.GetAxisRaw("Horizontal");
         var inputY = Input.GetAxisRaw("Vertical");
@@ -43,19 +39,13 @@ public class Move : MonoBehaviour
 
         if (inputX < 0)
         {
-            //playerImage.flipX = true;
+            playerImage.flipX = true;
         }
 
         else if (inputX > 0)
         {
-            //playerImage.flipX = false;
+            playerImage.flipX = false;
         }
-
-        //if ((input) != 0)
-        //{
-        //    //playerAnimation.ChangePlayerState(ActionState.Walk);
-        //}
-
 
         //playerAnimation.ChangePlayerState(ActionState.Walk);
 
