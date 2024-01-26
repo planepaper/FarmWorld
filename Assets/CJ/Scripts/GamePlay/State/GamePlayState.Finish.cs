@@ -1,3 +1,4 @@
+using CJ.Scripts.Common;
 using UnityEngine;
 
 namespace CJ.Scripts.GamePlay.State
@@ -9,6 +10,9 @@ namespace CJ.Scripts.GamePlay.State
     /// </summary>
     public class GamePlayState_Finish : GamePlayState
     {
-
+        protected override void Enter()
+        {
+            SceneManager.LoadScene(SceneType.MainMenu);
+        }
     }
 }
