@@ -16,9 +16,11 @@ namespace CJ.Scripts.Common
 {
     public enum SceneType
     {
-        Loading,
-        Game,
+        Initializer,
+        MainMenu,
+        InGame,
     }
+
     public class SceneManager
     {
         public static void LoadScene(SceneType type)
