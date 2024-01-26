@@ -15,7 +15,7 @@ namespace CJ.Scripts.Audio
             DontDestroyOnLoad(gameObject);
         }
 
-        public void PlayBGM(BgmType type)
+        public void Play(BgmType type)
         {
             var data = BgmScriptableObject.Instance.GetData(type);
 
