@@ -41,14 +41,12 @@ public class TestVege : MonoBehaviour, iInteraction
     {
         if(vegeState != VegetableState.Catched)
         {
+            vegeState = VegetableState.Catched;
             transform.SetParent(player.transform);
+            transform.position = player.transform.position;
             CloseUi();
         }
-        else
-        {
-            transform.SetParent(null);
-            OpenUi();
-        }
+        Debug.Log(vegeState.ToString());
     }
 
     public void Escape()
@@ -58,6 +56,8 @@ public class TestVege : MonoBehaviour, iInteraction
         // Vege Animation
         transform.position = InitPosition;
     }
+
+    
 }
 
 //public Vector3 Random(Vector3 myVector, Vector3 min, Vector3 max)

@@ -1,25 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class PlayerData : MonoBehaviour
 {
     float speed = 0f;
     PlayerAnimation playerAnimation;
+    [SerializeField] TestVege nearTarget = null;
+    List<TestVege> vegeLists = new List<TestVege>();
+
 
     private void Start()
     {
         playerAnimation = GetComponent<PlayerAnimation>();
     }
 
-    // Judge Player Nearby target
-
-    // Active PlayerAnimation // depart Player Animation
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.TryGetComponent(out TestVege vege))
         {
+            nearTarget = vege;
             vege.OpenUi();
         }
     }
@@ -27,24 +28,29 @@ public class PlayerData : MonoBehaviour
     {
         if (collision.TryGetComponent(out TestVege vege))
         {
+            nearTarget = null;
             vege.CloseUi();
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && playerAnimation.GetPlayerAction() != ActionState.Pull)
+        if (Input.GetKeyDown(KeyCode.Space) && nearTarget != null)
         {
-            Interaction(collision.gameObject);
+            Interaction(nearTarget);
         }
     }
 
-    private void Interaction(GameObject target)
+    private void Interaction(TestVege target)
     {
-        if (target.TryGetComponent(out iInteraction targetInteraction))
+        if (vegeLists.Count < 11)
         {
-            playerAnimation.ChangePlayerState(ActionState.Pull);
-            targetInteraction.InteractionWork(transform);
+            target.GetComponent<iInteraction>().InteractionWork(transform);
+            vegeLists.Add(target);
+        }
+        else
+        {
+            // Full Inventory
         }
     }
 }

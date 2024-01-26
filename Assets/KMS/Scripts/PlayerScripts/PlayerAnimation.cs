@@ -14,8 +14,8 @@ public class PlayerAnimation : MonoBehaviour
 
     private void PullAnimation()
     {
-        actionState = ActionState.Pull;
-        animator.SetBool("Pull", true);
+        //actionState = ActionState.Pull;
+        //animator.SetBool("Pull", true);
     }
 
     private void DownAnimation()
