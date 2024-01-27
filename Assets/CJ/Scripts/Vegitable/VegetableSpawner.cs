@@ -9,6 +9,7 @@ public class VegetableSpawner : MonoSingleton<VegetableSpawner>
 {
     private Dictionary<int, List<GameObject>> _spawnedInfo = new Dictionary<int, List<GameObject>>();
     [SerializeField] private BoxCollider2D _mapCollider;
+    [SerializeField] private PolygonCollider2D _fenceCollider;
 
     public GameObject SpawnVegetable()
     {
@@ -44,9 +45,12 @@ public class VegetableSpawner : MonoSingleton<VegetableSpawner>
         {
             pos = GetSpawnPosition(id);
             loopCount++;
-        } while (!_mapCollider.bounds.Contains(pos) && !Physics.CheckBox(pos, collider2d.size) && loopCount < 100);
+        } while (!_mapCollider.bounds.Contains(pos)
+                    || Physics.CheckBox(pos, collider2d.size)
+                    || _fenceCollider.bounds.Contains(pos)
+                    && loopCount < 100);
 
-        if (loopCount == 100)
+        if (loopCount == 500)
         {
             Debug.LogError("Failed to get position inside of map");
             DestroyImmediate(go);
