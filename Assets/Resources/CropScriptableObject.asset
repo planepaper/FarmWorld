@@ -18,8 +18,8 @@ MonoBehaviour:
     initValue: 50
     minValue: 10
     maxValue: 5000
-    minEscapeTime: 50
-    maxEscapeTime: 60
+    minEscapeTime: 15
+    maxEscapeTime: 30
     maximumSpawnCount: 25
     randomGap: 100
     minSpawnDistance: 10
@@ -33,8 +33,8 @@ MonoBehaviour:
     initValue: 150
     minValue: 45
     maxValue: 5000
-    minEscapeTime: 45
-    maxEscapeTime: 55
+    minEscapeTime: 25
+    maxEscapeTime: 35
     maximumSpawnCount: 20
     randomGap: 100
     minSpawnDistance: 20
@@ -48,8 +48,8 @@ MonoBehaviour:
     initValue: 350
     minValue: 60
     maxValue: 5000
-    minEscapeTime: 40
-    maxEscapeTime: 50
+    minEscapeTime: 25
+    maxEscapeTime: 35
     maximumSpawnCount: 15
     randomGap: 100
     minSpawnDistance: 30
@@ -63,8 +63,8 @@ MonoBehaviour:
     initValue: 800
     minValue: 60
     maxValue: 5000
-    minEscapeTime: 35
-    maxEscapeTime: 45
+    minEscapeTime: 20
+    maxEscapeTime: 40
     maximumSpawnCount: 10
     randomGap: 100
     minSpawnDistance: 40
@@ -78,7 +78,7 @@ MonoBehaviour:
     initValue: 1000
     minValue: 100
     maxValue: 5000
-    minEscapeTime: 30
+    minEscapeTime: 20
     maxEscapeTime: 40
     maximumSpawnCount: 5
     randomGap: 100
