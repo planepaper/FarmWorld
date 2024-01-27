@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 050ddd9e51abbe443bf84e3811f28ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 4
+  id: 2
   vegeState: 0
   CanvasPrefab: {fileID: 5884774542416317307, guid: da41ee971d5eb4f4488fb22a7b48efa7, type: 3}
 --- !u!70 &7111799139295228580
@@ -147,7 +147,7 @@ Animator:
   m_GameObject: {fileID: 8759582466148644125}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 78cfe8b170ddf45d892e8e80f4ea449d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

@@ -29,6 +29,17 @@ namespace CJ.Scripts.GamePlay.State
 
             // TODO: 농작물 랜덤 위치 생성
 
+            int loopCount = 0;
+            while (VegetableSpawner.Instance.SpawnVegetable() != null && loopCount < 200)
+            {
+                loopCount++;
+            }
+
+            if (loopCount == 200)
+            {
+                Debug.LogError("Failed to spawn vegetable!");
+            }
+
             // 초기화 이후에는 바로 Ready 상태로 이동
             nextStatus = new GamePlayState_Ready();
             nextEvent = Event.Exit;

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7111799139295228580}
   - component: {fileID: 8782800606678779065}
   m_Layer: 0
-  m_Name: Carrot
+  m_Name: Radish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -584570316, guid: ec8da38210f9d48e89ac7b97558477a4, type: 3}
+  m_Sprite: {fileID: 399259581, guid: 5931be4bf9afc4d35b2d358305683c52, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 050ddd9e51abbe443bf84e3811f28ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 4
+  id: 3
   vegeState: 0
   CanvasPrefab: {fileID: 5884774542416317307, guid: da41ee971d5eb4f4488fb22a7b48efa7, type: 3}
 --- !u!70 &7111799139295228580
@@ -147,7 +147,7 @@ Animator:
   m_GameObject: {fileID: 8759582466148644125}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 625d6cad99dbd4df290d2a32ed09afcd, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

@@ -16,9 +16,14 @@ namespace CJ.Scripts.Crops
         public int maxEscapeTime;
         public int maximumSpawnCount;
         public int randomGap;
+        public int minSpawnDistance;
+        public int maxSpawnDistance;
 
         [Header("Graphics Data")]
         public Sprite icon;
         public RuntimeAnimatorController animController;
+
+        [Header("Other")]
+        public GameObject prefab;
     }
 }
