@@ -1,6 +1,7 @@
 using CJ.Scripts.Common;
 using CJ.Scripts.Crops;
 using CJ.Scripts.GamePlay.State;
+using CJ.Scripts.StockMarket;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +10,7 @@ namespace CJ.Scripts.GamePlay
 {
     public class InventorySlotData
     {
-        public CorpData data;
+        public CropData data;
         public GameObject go;
     }
 
@@ -19,6 +20,7 @@ namespace CJ.Scripts.GamePlay
 
         public float money;
         public List<InventorySlotData> inventory = new List<InventorySlotData>();
+        public Dictionary<int, StockMarketData> stockMarket = new Dictionary<int, StockMarketData>();
 
         #endregion
 
@@ -26,6 +28,9 @@ namespace CJ.Scripts.GamePlay
 
         public delegate void InventorySlotUpdated(int slot, InventorySlotData data);
         public InventorySlotUpdated OnInventorySlotUpdated;
+
+        public delegate void StockMarketUpdated();
+        public StockMarketUpdated OnStockMarketUpdated;
 
         #endregion
 

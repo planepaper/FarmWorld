@@ -1,4 +1,8 @@
+using CJ.Scripts.Crops;
+using CJ.Scripts.StockMarket;
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace CJ.Scripts.GamePlay.State
 {
@@ -10,14 +14,22 @@ namespace CJ.Scripts.GamePlay.State
         private float _playTime = 0;                // 게임 플레이 상태에 들어온 이후 지난 시간
         private float _nextStockUpdateTime = 15;    // 다음 주식 시장 업데이트 시간
 
+        protected override void Enter()
+        {
+            base.Enter();
+
+            _nextStockUpdateTime = GameRule.Instance.stockUpdateInterval;
+        }
+
         protected override void Update()
         {
             _playTime += Time.fixedDeltaTime;
 
-            if (Mathf.Abs(_playTime - _nextStockUpdateTime) < float.Epsilon)
+            if (_nextStockUpdateTime < _playTime)
             {
-                // TODO: 주식 업데이트
                 _nextStockUpdateTime += GameRule.Instance.stockUpdateInterval;
+
+                UpdateStockMarket();
             }
 
             if (_playTime >= GameRule.Instance.gamePlayTime)
@@ -25,6 +37,31 @@ namespace CJ.Scripts.GamePlay.State
                 nextStatus = new GamePlayState_Finish();
                 nextEvent = Event.Exit;
             }
+        }
+
+        private void UpdateStockMarket()
+        {
+            foreach (var pair in GameManager.Instance.stockMarket)
+            {
+                var stock = pair.Value;
+                var data = CropScriptableObject.Instance.GetData(pair.Key);
+
+                stock.lastPriceStatus = (PriceStatus) Random.Range(0, (int) PriceStatus.Count);
+                switch (stock.lastPriceStatus)
+                {
+                    case PriceStatus.Up:
+                        stock.price += Random.Range(0, 100);
+                        break;
+                    case PriceStatus.Down:
+                        stock.price -= Random.Range(0, 100);
+                        break;
+                }
+
+                stock.price = Mathf.Max(stock.price, data.minValue);
+                stock.price = Mathf.Min(stock.price, data.maxValue);
+            }
+
+            GameManager.Instance.OnStockMarketUpdated?.Invoke();
         }
     }
 }

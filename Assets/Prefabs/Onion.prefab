@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 050ddd9e51abbe443bf84e3811f28ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 1
+  id: 0
   CanvasPrefab: {fileID: 5884774542416317307, guid: da41ee971d5eb4f4488fb22a7b48efa7, type: 3}
 --- !u!95 &8397846439899514713
 Animator:

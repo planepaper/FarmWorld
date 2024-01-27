@@ -12,39 +12,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e58474b005894477a612f74ba2f2490c, type: 3}
   m_Name: CropScriptableObject
   m_EditorClassIdentifier: 
-  corps:
+  crops:
   - id: 0
-    name: "\uB2F9\uADFC"
-    initValue: 100
-    minValue: 200
-    minEscapeTime: 30
-    maxEscapeTime: 40
-    animController: {fileID: 0}
-  - id: 1
     name: "\uC591\uD30C"
-    initValue: 100
-    minValue: 200
-    minEscapeTime: 30
-    maxEscapeTime: 40
+    initValue: 150
+    minValue: 65
+    maxValue: 5000
+    minEscapeTime: 50
+    maxEscapeTime: 60
+    maximumSpawnCount: 25
+    icon: {fileID: 195316444, guid: acba86094186a44c6bdb1c235857569f, type: 3}
     animController: {fileID: 9100000, guid: 9d821ebe2ed694606a10e6decd1d9288, type: 2}
+  - id: 1
+    name: "\uAC10\uC790"
+    initValue: 320
+    minValue: 65
+    maxValue: 5000
+    minEscapeTime: 45
+    maxEscapeTime: 55
+    maximumSpawnCount: 20
+    icon: {fileID: 0}
+    animController: {fileID: 0}
   - id: 2
+    name: "\uB2F9\uADFC"
+    initValue: 500
+    minValue: 60
+    maxValue: 5000
+    minEscapeTime: 40
+    maxEscapeTime: 50
+    maximumSpawnCount: 15
+    icon: {fileID: 0}
+    animController: {fileID: 0}
+  - id: 3
+    name: "\uBB34"
+    initValue: 800
+    minValue: 80
+    maxValue: 5000
+    minEscapeTime: 35
+    maxEscapeTime: 45
+    maximumSpawnCount: 10
+    icon: {fileID: 0}
+    animController: {fileID: 0}
+  - id: 4
     name: "\uC218\uBC15"
-    initValue: 100
-    minValue: 200
+    initValue: 1000
+    minValue: 100
+    maxValue: 5000
     minEscapeTime: 30
     maxEscapeTime: 40
+    maximumSpawnCount: 5
+    icon: {fileID: -1948982313, guid: 0dd42711bf09f4df2962ee22d00bb5c2, type: 3}
     animController: {fileID: 9100000, guid: 4bf2765d378bf4dd0af0438df2717419, type: 2}
-  - id: 0
-    name: "\uB2F9\uADFC"
-    initValue: 100
-    minValue: 200
-    minEscapeTime: 30
-    maxEscapeTime: 40
-    animController: {fileID: 0}
-  - id: 0
-    name: "\uB2F9\uADFC"
-    initValue: 100
-    minValue: 200
-    minEscapeTime: 30
-    maxEscapeTime: 40
-    animController: {fileID: 0}

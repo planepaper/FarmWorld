@@ -1,3 +1,5 @@
+using CJ.Scripts.Crops;
+using CJ.Scripts.StockMarket;
 using UnityEngine;
 
 namespace CJ.Scripts.GamePlay.State
@@ -10,6 +12,20 @@ namespace CJ.Scripts.GamePlay.State
         protected override void Enter()
         {
             // TODO: 데이터 초기화
+
+            for (var i = 0; i < CropScriptableObject.Instance.Count; ++i)
+            {
+                var cropData = CropScriptableObject.Instance.GetData(i);
+                var stockData = new StockMarketData
+                {
+                    price = cropData.initValue,
+                    lastPriceStatus = PriceStatus.None
+                };
+
+                GameManager.Instance.stockMarket.Add(cropData.id, stockData);
+            }
+
+            GameManager.Instance.OnStockMarketUpdated();
 
             // TODO: 농작물 랜덤 위치 생성
 
