@@ -16,19 +16,26 @@ using CJ.Scripts.GamePlay.State;
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace CJ.Scripts.GamePlay.UI
 {
     public class Time : MonoBehaviour
     {
         public TMP_Text text;
+        public Slider slider;
 
         private void FixedUpdate()
         {
             if (!GameManager.Instance.isRunning) return;
 
+            var maxTime = GameRule.Instance.gamePlayTime;
             var time = (GameManager.Instance.state as GamePlayState_Running).playTime;
-            text.text = $"{Mathf.Floor(time / 60).ToString("00")}:{Mathf.Floor(time % 60).ToString("00")}";
+
+            var remainingTime = maxTime - time;
+            text.text = $"{Mathf.Floor(remainingTime / 60).ToString("00")}:{Mathf.Floor(remainingTime % 60).ToString("00")}";
+
+            slider.value = remainingTime / maxTime;
         }
     }
 }

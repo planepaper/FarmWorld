@@ -713,7 +713,6 @@ RectTransform:
   - {fileID: 498124193}
   - {fileID: 1682300122}
   - {fileID: 1908190543}
-  - {fileID: 1352550955}
   - {fileID: 1018129122}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2093,6 +2092,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1068691717}
+  slider: {fileID: 0}
 --- !u!1 &827550162
 GameObject:
   m_ObjectHideFlags: 0
@@ -2260,6 +2260,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StockMarketSlot
       objectReference: {fileID: 0}
+    - target: {fileID: 8577676795187114558, guid: 22aa54e628f6a44cb99abc8e98c952b6, type: 3}
+      propertyPath: id
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2305,10 +2309,10 @@ RectTransform:
   - {fileID: 1226964029}
   m_Father: {fileID: 1018129122}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -79}
-  m_SizeDelta: {x: 903.7, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -0.000015258789, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &900364848
 MonoBehaviour:
@@ -2573,6 +2577,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StockMarketSlot (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8577676795187114558, guid: 22aa54e628f6a44cb99abc8e98c952b6, type: 3}
+      propertyPath: id
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2592,6 +2600,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1018129122}
+  - component: {fileID: 1018129123}
   m_Layer: 5
   m_Name: TimerBar
   m_TagString: Untagged
@@ -2612,13 +2621,28 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 900364847}
+  - {fileID: 1352550955}
   m_Father: {fileID: 242475045}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -79}
+  m_SizeDelta: {x: 903.7, y: 50}
   m_Pivot: {x: 0.5, y: 1}
+--- !u!114 &1018129123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1018129121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab8936f856de43eaaf7bfd096a51167c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 2057937238}
+  slider: {fileID: 1226964030}
 --- !u!1001 &1044767180
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2710,6 +2734,10 @@ PrefabInstance:
     - target: {fileID: 8249584150837787882, guid: 22aa54e628f6a44cb99abc8e98c952b6, type: 3}
       propertyPath: m_Name
       value: StockMarketSlot (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8577676795187114558, guid: 22aa54e628f6a44cb99abc8e98c952b6, type: 3}
+      propertyPath: id
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3563,7 +3591,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -3591,7 +3619,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.631
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4282,18 +4310,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1352550954}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2057937237}
-  m_Father: {fileID: 242475045}
+  m_Father: {fileID: 1018129122}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -50}
-  m_SizeDelta: {x: 300, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1352550956
 MonoBehaviour:
@@ -4308,6 +4336,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 2057937238}
+  slider: {fileID: 0}
 --- !u!1 &1404937790
 GameObject:
   m_ObjectHideFlags: 0
@@ -6410,6 +6439,10 @@ PrefabInstance:
     - target: {fileID: 5314041928629551686, guid: 36cbc084fb24e024196f4bd24b939cce, type: 3}
       propertyPath: m_Name
       value: StockMarketSlot Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5533000279154412690, guid: 36cbc084fb24e024196f4bd24b939cce, type: 3}
+      propertyPath: id
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6216482640521867266, guid: 36cbc084fb24e024196f4bd24b939cce, type: 3}
       propertyPath: m_Pivot.x
