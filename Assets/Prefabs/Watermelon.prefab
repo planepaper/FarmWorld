@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6946531023551842602}
   - component: {fileID: 1958197280050088744}
-  - component: {fileID: 6570562707157499939}
   - component: {fileID: 7597314078249058726}
   - component: {fileID: 7111799139295228580}
+  - component: {fileID: 8782800606678779065}
   m_Layer: 0
   m_Name: Watermelon
   m_TagString: Untagged
@@ -87,25 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6570562707157499939
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8759582466148644125}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0926283b9849e4648840817f3b141bff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sprites:
-  - {fileID: -1948982313, guid: 0dd42711bf09f4df2962ee22d00bb5c2, type: 3}
-  - {fileID: 813838790, guid: 0dd42711bf09f4df2962ee22d00bb5c2, type: 3}
-  - {fileID: -244322264, guid: 0dd42711bf09f4df2962ee22d00bb5c2, type: 3}
-  - {fileID: -473746451, guid: 0dd42711bf09f4df2962ee22d00bb5c2, type: 3}
-  animationTime: 0.125
-  loop: 1
 --- !u!114 &7597314078249058726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 050ddd9e51abbe443bf84e3811f28ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 2
   CanvasPrefab: {fileID: 5884774542416317307, guid: da41ee971d5eb4f4488fb22a7b48efa7, type: 3}
 --- !u!70 &7111799139295228580
 CapsuleCollider2D:
@@ -154,3 +136,24 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 4, y: 4}
   m_Direction: 0
+--- !u!95 &8782800606678779065
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8759582466148644125}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4bf2765d378bf4dd0af0438df2717419, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

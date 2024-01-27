@@ -1,3 +1,4 @@
+using CJ.Scripts.GamePlay;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,8 +7,6 @@ public class PlayerData : MonoBehaviour
 {
     public float speed = 5f;
     [SerializeField] TestVege nearTarget = null;
-    List<TestVege> vegeLists = new List<TestVege>();
-    Stack<TestVege> vegeStacks = new Stack<TestVege>();
 
     public GameObject fullnotifyPopUpPrefab;
     private GameObject notifyPopUp = null;
@@ -43,20 +42,19 @@ public class PlayerData : MonoBehaviour
 
     private void Interaction(TestVege target)
     {
-        if (vegeStacks.Count < 5 && nearTarget != null)
+        if (target != null)
         {
-            target.GetComponent<iInteraction>().InteractionWork(transform);
-            target.RemoveAction(() => vegeStacks.Pop());
-            vegeStacks.Push(target);
-        }
-        else if(vegeStacks.Count > 0 && nearTarget == null)
-        {
-            var vege = vegeStacks.Peek();
-            vege.InteractionWork(transform);
+            ((iInteraction) target).InteractionWork(transform);
         }
         else
         {
-            StartCoroutine(ShowFullPopUp());
+            {
+                var go = GameManager.Instance.TryUnCatchCrops();
+                if (go != null)
+                {
+                    (go.GetComponent<iInteraction>()).InteractionWork(transform);
+                }
+            }
         }
     }
 

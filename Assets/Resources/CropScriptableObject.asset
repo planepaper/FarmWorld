@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e58474b005894477a612f74ba2f2490c, type: 3}
+  m_Name: CropScriptableObject
+  m_EditorClassIdentifier: 
+  corps:
+  - id: 0
+    name: "\uB2F9\uADFC"
+    initValue: 100
+    minValue: 200
+    minEscapeTime: 30
+    maxEscapeTime: 40
+    animController: {fileID: 0}
+  - id: 1
+    name: "\uC591\uD30C"
+    initValue: 100
+    minValue: 200
+    minEscapeTime: 30
+    maxEscapeTime: 40
+    animController: {fileID: 9100000, guid: 9d821ebe2ed694606a10e6decd1d9288, type: 2}
+  - id: 2
+    name: "\uC218\uBC15"
+    initValue: 100
+    minValue: 200
+    minEscapeTime: 30
+    maxEscapeTime: 40
+    animController: {fileID: 9100000, guid: 4bf2765d378bf4dd0af0438df2717419, type: 2}
+  - id: 0
+    name: "\uB2F9\uADFC"
+    initValue: 100
+    minValue: 200
+    minEscapeTime: 30
+    maxEscapeTime: 40
+    animController: {fileID: 0}
+  - id: 0
+    name: "\uB2F9\uADFC"
+    initValue: 100
+    minValue: 200
+    minEscapeTime: 30
+    maxEscapeTime: 40
+    animController: {fileID: 0}

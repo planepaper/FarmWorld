@@ -1,3 +1,4 @@
+using CJ.Scripts.GamePlay;
 using System;
 using UnityEngine;
 public enum VegetableState
@@ -10,6 +11,8 @@ public enum VegetableState
 
 public class TestVege : MonoBehaviour, iInteraction
 {
+    [SerializeField] private int id;
+
     private Vector3 InitPosition;
     private VegetableState vegeState = VegetableState.Idle;
     public Canvas CanvasPrefab;
@@ -48,10 +51,18 @@ public class TestVege : MonoBehaviour, iInteraction
     {
         if(vegeState != VegetableState.Catched)
         {
+            // 잡기가 실패하면 그냥 리턴
+            if (!GameManager.Instance.TryCatchCrop(id, gameObject))
+            {
+                return;
+            }
+
             vegeState = VegetableState.Catched;
             transform.SetParent(player.transform);
             transform.position = player.transform.position;
             CloseUi();
+
+
         }
         else if(vegeState == VegetableState.Catched)
         {

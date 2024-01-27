@@ -8,8 +8,6 @@ public class Crop : MonoBehaviour, iInteraction
 
     private Canvas currentCanvas = null;
 
-
-
     private void Start()
     {
         //var vegeInstance = Instantiate(gameObject,Random(InitPosition ,Vector3.zero,Vector3.one),Quaternion.identity);

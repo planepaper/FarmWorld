@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gamePlayTime: 30
   _stockUpdateInterval: 15
+  _maxInventorySlot: 5
