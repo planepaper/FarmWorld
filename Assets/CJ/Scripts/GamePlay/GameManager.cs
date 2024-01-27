@@ -20,6 +20,9 @@ namespace CJ.Scripts.GamePlay
         #region Game Data
 
         public float money;
+        public int totalCropCounts;
+        public int[] cropCounts;
+
         public List<InventorySlotData> inventory = new List<InventorySlotData>();
         public Dictionary<int, StockMarketData> stockMarket = new Dictionary<int, StockMarketData>();
 
@@ -32,6 +35,9 @@ namespace CJ.Scripts.GamePlay
 
         public delegate void StockMarketUpdated();
         public StockMarketUpdated OnStockMarketUpdated;
+
+        public delegate void CropCountUpdated(int cropIndex);
+        public CropCountUpdated OnCropCountUpdated;
 
         #endregion
 
@@ -52,6 +58,12 @@ namespace CJ.Scripts.GamePlay
         private void Start()
         {
             money = 0;
+            totalCropCounts = 0;
+            cropCounts = new int[CropScriptableObject.Instance.Count];
+            for (int i = 0; i < cropCounts.Length; i++)
+            {
+                cropCounts[i] = 0;
+            }
         }
 
         private void FixedUpdate()
@@ -151,6 +163,20 @@ namespace CJ.Scripts.GamePlay
                 slot.go = null;
             }
             OnInventorySlotUpdated?.Invoke(-1, null);
+        }
+
+        public void AddCropToFence(int cropIndex)
+        {
+            totalCropCounts++;
+            cropCounts[cropIndex]++;
+            OnCropCountUpdated?.Invoke(cropIndex);
+        }
+
+        public void SubtractCropFromFence(int cropIndex)
+        {
+            totalCropCounts--;
+            cropCounts[cropIndex]--;
+            OnCropCountUpdated?.Invoke(cropIndex);
         }
     }
 }

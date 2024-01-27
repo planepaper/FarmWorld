@@ -128,6 +128,12 @@ public class TestVege : MonoBehaviour
     {
         if (vegeState != VegetableState.Catched)
         {
+            //HARD CODING!!!
+            if (vegeState == VegetableState.Stored)
+            {
+                GameManager.Instance.SubtractCropFromFence(id);
+            }
+
             vegeState = VegetableState.Catched;
             transform.SetParent(player.transform);
             transform.position = player.transform.position;
@@ -158,6 +164,8 @@ public class TestVege : MonoBehaviour
             transform.SetParent(null);
             gameObject.SetActive(true);
             OpenUi();
+
+            GameManager.Instance.AddCropToFence(id);
 
             timeForWaitingToEscape = 0f;
         }
