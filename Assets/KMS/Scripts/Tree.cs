@@ -23,14 +23,11 @@ public class Tree : MonoBehaviour
     {
         var distance = Vector2.Distance(collision.transform.position, this.transform.position);
         Debug.Log(distance);
-        //if ((distance < col.bounds.size.x) || (distance < col.bounds.size.y))
-        //{
+
         if (collision.CompareTag("Tree") == true && (collision.CompareTag("House") == true || collision.CompareTag("Fence") == true))
         {
             RandomnessPos();
         }
-
-        //}
     }
     private void OnTriggerExit2D(Collider2D collision)
     {

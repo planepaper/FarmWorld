@@ -228,7 +228,7 @@ TextureImporter:
         width: 7
         height: 1
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -236,6 +236,111 @@ TextureImporter:
       bones: []
       spriteID: b5187f8681bc91b40b22b8c3e8090751
       internalID: 855799393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Panel_5
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 38
+        width: 232
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 5, y: 5, z: 5, w: 5}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d92204795cebf54fbcfeff87984eade
+      internalID: 517695840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Panel_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 161
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 5, y: 5, z: 5, w: 5}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3f792835854bad4dad5e741ca5b2681
+      internalID: 1548214082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Panel_7
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 2
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 6, y: 6, z: 6, w: 6}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9266afe2fcc21441b74f8d4d443fe47
+      internalID: -1409700395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Panel_8
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 56
+        width: 102
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 2, y: 0, z: 2, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ada58c0ff424da4eb7ce6e5e2fb4fa9
+      internalID: -1055326937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Panel_9
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 64
+        width: 102
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 2, y: 0, z: 2, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f7081534a52be548915407797aed53f
+      internalID: -2062100922
       vertices: []
       indices: 
       edges: []
@@ -256,6 +361,11 @@ TextureImporter:
       UI_Panel_2: -20534703
       UI_Panel_3: -197028680
       UI_Panel_4: 855799393
+      UI_Panel_5: -1947719330
+      UI_Panel_6: 517695840
+      UI_Panel_7: 1548214082
+      UI_Panel_8: -1409700395
+      UI_Panel_9: -1055326937
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
