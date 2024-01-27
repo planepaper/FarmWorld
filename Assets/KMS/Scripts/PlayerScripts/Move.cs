@@ -69,5 +69,4 @@ public class Move : MonoBehaviour
         //    rigid.angularVelocity = Vector3.zero;
         //}
     }
-
 }

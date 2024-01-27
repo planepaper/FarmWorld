@@ -1,6 +1,8 @@
 using CJ.Scripts.GamePlay;
 using System;
 using UnityEngine;
+using CJ.Scripts.Crops;
+
 public enum VegetableState
 {
     Idle,
@@ -14,15 +16,21 @@ public class TestVege : MonoBehaviour
 {
     [SerializeField]
     private int id;
+    private CropData cropData;
 
-    private Vector3 InitPosition;
+    private Vector3 initPosition;
+    [SerializeField]
+    private float returnSpeed = 2f;
 
     [SerializeField]
     private VegetableState vegeState = VegetableState.Idle;
     public Canvas CanvasPrefab;
 
-    private int price;
+    [Header("EscapeTime")]
     private float timeForWaitingToEscape;
+
+    [SerializeField]
+    private float willEscapeTime;
 
     private Canvas currentCanvas = null;
 
@@ -30,19 +38,35 @@ public class TestVege : MonoBehaviour
     {
         //var vegeInstance = Instantiate(gameObject,Random(InitPosition ,Vector3.zero,Vector3.one),Quaternion.identity);
         //InitPosition = vegeInstance.transform.position;
+
+        initPosition = transform.position;
+        cropData = CropScriptableObject.Instance.GetData(id);
+        willEscapeTime
+         = UnityEngine.Random.Range(cropData.minEscapeTime, cropData.maxEscapeTime);
     }
 
     private void Update()
     {
         if (vegeState == VegetableState.Stored)
         {
+            Debug.Log(timeForWaitingToEscape);
             timeForWaitingToEscape += Time.deltaTime;
+            if (timeForWaitingToEscape > willEscapeTime)
+            {
+                StartToEscape();
+            }
         }
     }
 
     public int GetID()
     {
         return id;
+    }
+
+    private void StartToEscape()
+    {
+        transform.position
+        = Vector3.MoveTowards(transform.position, initPosition, returnSpeed * Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -136,19 +160,6 @@ public class TestVege : MonoBehaviour
 
     //         Debug.Log(vegeState.ToString());
     // }
-
-    public void Sell()
-    {
-        // sell in price value
-    }
-
-    public void Escape()
-    {
-        // Jump throw wall
-        // Run to Init Position
-        // Vege Animation
-        transform.position = InitPosition;
-    }
 }
 
 //public Vector3 Random(Vector3 myVector, Vector3 min, Vector3 max)
