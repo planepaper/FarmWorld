@@ -24,6 +24,7 @@ MonoBehaviour:
     randomGap: 100
     minSpawnDistance: 10
     maxSpawnDistance: 20
+    returnSpeed: 2
     icon: {fileID: -1198413192, guid: 2a0a110aa01db49d485c95b9210efc9a, type: 3}
     animController: {fileID: 9100000, guid: 9d821ebe2ed694606a10e6decd1d9288, type: 2}
     prefab: {fileID: 8759582466148644125, guid: c115c58aad93b49e087d0bca62a46d71, type: 3}
@@ -38,6 +39,7 @@ MonoBehaviour:
     randomGap: 100
     minSpawnDistance: 20
     maxSpawnDistance: 30
+    returnSpeed: 3
     icon: {fileID: -995239499, guid: 2a0a110aa01db49d485c95b9210efc9a, type: 3}
     animController: {fileID: 9100000, guid: 9d2c4f373ae104351a0931f6c0023261, type: 2}
     prefab: {fileID: 8759582466148644125, guid: 5ffd2f574bedf4ff1807bfbbfa3858bc, type: 3}
@@ -52,6 +54,7 @@ MonoBehaviour:
     randomGap: 100
     minSpawnDistance: 30
     maxSpawnDistance: 40
+    returnSpeed: 3.5
     icon: {fileID: -158140033, guid: 2a0a110aa01db49d485c95b9210efc9a, type: 3}
     animController: {fileID: 9100000, guid: 78cfe8b170ddf45d892e8e80f4ea449d, type: 2}
     prefab: {fileID: 8759582466148644125, guid: 4e2615d1b8a554cba980c87c1ea3a04f, type: 3}
@@ -66,6 +69,7 @@ MonoBehaviour:
     randomGap: 100
     minSpawnDistance: 40
     maxSpawnDistance: 50
+    returnSpeed: 4
     icon: {fileID: -751755083, guid: 2a0a110aa01db49d485c95b9210efc9a, type: 3}
     animController: {fileID: 9100000, guid: 625d6cad99dbd4df290d2a32ed09afcd, type: 2}
     prefab: {fileID: 8759582466148644125, guid: b7b38e74b23614d46af47969ecfee99f, type: 3}
@@ -80,6 +84,7 @@ MonoBehaviour:
     randomGap: 100
     minSpawnDistance: 50
     maxSpawnDistance: 60
+    returnSpeed: 4
     icon: {fileID: 1988418605, guid: 2a0a110aa01db49d485c95b9210efc9a, type: 3}
     animController: {fileID: 9100000, guid: 4bf2765d378bf4dd0af0438df2717419, type: 2}
     prefab: {fileID: 8759582466148644125, guid: 805924982c73f4543846d59553a6e107, type: 3}

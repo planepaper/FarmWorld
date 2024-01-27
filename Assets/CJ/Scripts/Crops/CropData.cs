@@ -18,6 +18,7 @@ namespace CJ.Scripts.Crops
         public int randomGap;
         public int minSpawnDistance;
         public int maxSpawnDistance;
+        public float returnSpeed;
 
         [Header("Graphics Data")]
         public Sprite icon;

@@ -20,7 +20,7 @@ public class TestVege : MonoBehaviour
 
     private Vector3 initPosition;
     [SerializeField]
-    private float returnSpeed = 2f;
+    private float returnSpeed;
 
     [SerializeField]
     private VegetableState vegeState = VegetableState.Idle;
@@ -43,6 +43,7 @@ public class TestVege : MonoBehaviour
         cropData = CropScriptableObject.Instance.GetData(id);
         willEscapeTime
          = UnityEngine.Random.Range(cropData.minEscapeTime, cropData.maxEscapeTime);
+        returnSpeed = cropData.returnSpeed;
     }
 
     private void Update()
