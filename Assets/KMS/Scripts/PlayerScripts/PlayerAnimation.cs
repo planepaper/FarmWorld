@@ -1,55 +1,49 @@
 using UnityEngine;
-public enum ActionState
+public enum playerActionState
 {
     Idle,
     Walk,
-    Pull,
-    Down
 };
 
 public class PlayerAnimation : MonoBehaviour
 {
-    private ActionState actionState = ActionState.Idle;
+    private playerActionState actionState = playerActionState.Idle;
     private Animator animator;
 
-    private void PullAnimation()
-    {
-        //actionState = ActionState.Pull;
-        //animator.SetBool("Pull", true);
-    }
+    PlayerController playerController;
 
-    private void DownAnimation()
+    private void Start()
     {
-        actionState = ActionState.Down;
-        animator.SetBool("Down", true);
+        animator = GetComponent<Animator>();
+        playerController = GetComponent<PlayerController>();
     }
 
     private void WalkAniamtion()
     {
         // 이동시에 제어해야할까?
-        actionState = ActionState.Walk;
-        animator.SetBool("Walk", true);
+        //actionState = playerActionState.Walk;
+        //animator.SetBool("Walk", true);
     }
 
-    public void ChangePlayerState(ActionState actionState)
+    private void IdleAnimation()
+    {
+        //actionState = playerActionState.Idle;
+        //animator.SetBool("Walk", false);
+    }
+    public void ChangePlayerState(playerActionState actionState)
     {
         switch (actionState)
         {
-            case ActionState.Idle:
+            case playerActionState.Idle:
+                IdleAnimation();
                 break;
-            case ActionState.Walk:
+            case playerActionState.Walk:
                 WalkAniamtion();
-                break;
-            case ActionState.Pull:
-                PullAnimation();
-                break;
-            case ActionState.Down:
-                DownAnimation();
                 break;
         }
     }
 
-    public ActionState GetPlayerAction()
+    public playerActionState GetPlayerState()
     {
         return actionState;
     }

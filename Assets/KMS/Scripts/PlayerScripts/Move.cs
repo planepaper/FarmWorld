@@ -5,8 +5,6 @@ using UnityEngine;
 public class Move : MonoBehaviour
 {
     Vector3 moveVelocity;
-    PlayerAnimation playerAnimation;
-    float movePower = 5f;
 
     private float velocityLimit = 0.3f;
     private float walkDeaccelerationOnX;
@@ -14,10 +12,12 @@ public class Move : MonoBehaviour
     public float walkDeacceleration = 3f;
 
     SpriteRenderer playerImage;
+    PlayerController playerController;
 
     private void Start()
     {
-        playerAnimation = GetComponent<PlayerAnimation>();
+        playerController = GetComponent<PlayerController>();
+
         playerImage = GetComponent<SpriteRenderer>();
         playerImage.flipX = false;
     }
@@ -27,6 +27,7 @@ public class Move : MonoBehaviour
         PlayerMove();
     }
 
+
     void PlayerMove()
     {
         moveVelocity = Vector3.zero;
@@ -35,19 +36,26 @@ public class Move : MonoBehaviour
         var inputY = Input.GetAxisRaw("Vertical");
 
 
-        var input = new Vector3(inputX, inputY).normalized * movePower;
+        var input = new Vector3(inputX, inputY).normalized * playerController._Speed;
 
         if (inputX < 0)
-        {
-            playerImage.flipX = true;
-        }
-
-        else if (inputX > 0)
         {
             playerImage.flipX = false;
         }
 
-        //playerAnimation.ChangePlayerState(ActionState.Walk);
+        else if (inputX > 0)
+        {
+            playerImage.flipX = true;
+        }
+
+        if (input.magnitude > 0)
+        {
+            playerController.ChangePlayerState(playerActionState.Walk);
+        }
+        else
+        {
+            playerController.ChangePlayerState(playerActionState.Idle);
+        }
 
         moveVelocity = new Vector3
             (Mathf.SmoothDamp(input.x, 0, ref walkDeaccelerationOnX, walkDeacceleration),

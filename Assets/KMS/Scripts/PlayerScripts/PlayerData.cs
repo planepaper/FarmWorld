@@ -1,17 +1,19 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerData : MonoBehaviour
 {
-    float speed = 0f;
-    PlayerAnimation playerAnimation;
+    public float speed = 5f;
     [SerializeField] TestVege nearTarget = null;
     List<TestVege> vegeLists = new List<TestVege>();
+    Stack<TestVege> vegeStacks = new Stack<TestVege>();
 
+    public GameObject fullnotifyPopUpPrefab;
+    private GameObject notifyPopUp = null;
 
     private void Start()
     {
-        playerAnimation = GetComponent<PlayerAnimation>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -33,7 +35,7 @@ public class PlayerData : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && nearTarget != null)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             Interaction(nearTarget);
         }
@@ -41,14 +43,30 @@ public class PlayerData : MonoBehaviour
 
     private void Interaction(TestVege target)
     {
-        if (vegeLists.Count < 11)
+        if (vegeStacks.Count < 5 && nearTarget != null)
         {
             target.GetComponent<iInteraction>().InteractionWork(transform);
-            vegeLists.Add(target);
+            target.RemoveAction(() => vegeStacks.Pop());
+            vegeStacks.Push(target);
+        }
+        else if(vegeStacks.Count > 0 && nearTarget == null)
+        {
+            var vege = vegeStacks.Peek();
+            vege.InteractionWork(transform);
         }
         else
         {
-            // Full Inventory
+            StartCoroutine(ShowFullPopUp());
         }
+    }
+
+    IEnumerator ShowFullPopUp()
+    {
+        if (notifyPopUp == null)
+        {
+            notifyPopUp = Instantiate(fullnotifyPopUpPrefab);
+        }
+        yield return new WaitForSeconds(2f);
+        Destroy(notifyPopUp);
     }
 }

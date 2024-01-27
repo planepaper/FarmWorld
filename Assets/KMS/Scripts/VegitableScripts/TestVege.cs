@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 public enum VegetableState
 {
@@ -12,7 +13,9 @@ public class TestVege : MonoBehaviour, iInteraction
     private Vector3 InitPosition;
     private VegetableState vegeState = VegetableState.Idle;
     public Canvas CanvasPrefab;
-    
+    private int price;
+
+    Action removeAction;
     private Canvas currentCanvas = null;
 
     private void Start()
@@ -21,11 +24,17 @@ public class TestVege : MonoBehaviour, iInteraction
         //InitPosition = vegeInstance.transform.position;
     }
 
+
+    public void RemoveAction(Action action)
+    {
+        removeAction = action;
+    }
     public void OpenUi()
     {
         if (currentCanvas == null)
         {
             var canvas = Instantiate(CanvasPrefab, this.transform);
+            canvas.transform.position = new Vector2(transform.position.x, transform.position.y + 2.5f);
             currentCanvas = canvas;
         }
         currentCanvas.enabled = true;
@@ -44,7 +53,20 @@ public class TestVege : MonoBehaviour, iInteraction
             transform.position = player.transform.position;
             CloseUi();
         }
+        else if(vegeState == VegetableState.Catched)
+        {
+            vegeState = VegetableState.Idle;
+            transform.SetParent(null);
+            removeAction.Invoke();
+            OpenUi();
+        }
+
         Debug.Log(vegeState.ToString());
+    }
+
+    public void Sell()
+    {
+        // sell in price value
     }
 
     public void Escape()
