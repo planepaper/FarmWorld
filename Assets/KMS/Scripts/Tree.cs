@@ -24,7 +24,7 @@ public class Tree : MonoBehaviour
         var distance = Vector2.Distance(collision.transform.position, this.transform.position);
         Debug.Log(distance);
 
-        if (collision.CompareTag("Tree") == true && (collision.CompareTag("House") == true || collision.CompareTag("Fence") == true))
+        if ((collision.CompareTag("House") == true || collision.CompareTag("Fence") == true))
         {
             RandomnessPos();
         }
