@@ -14,6 +14,8 @@ namespace CJ.Scripts.GamePlay.State
         private float _playTime = 0;                // 게임 플레이 상태에 들어온 이후 지난 시간
         private float _nextStockUpdateTime = 15;    // 다음 주식 시장 업데이트 시간
 
+        public float playTime => _playTime;
+
         protected override void Enter()
         {
             base.Enter();

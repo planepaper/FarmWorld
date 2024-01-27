@@ -35,6 +35,7 @@ namespace CJ.Scripts.GamePlay
         #endregion
 
         private GamePlayState _status = new GamePlayState_Init();
+        public GamePlayState state => _status;
 
         public bool isRunning => _status.GetType() == typeof(GamePlayState_Running);
 
