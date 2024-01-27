@@ -131,6 +131,7 @@ public class TestVege : MonoBehaviour
             vegeState = VegetableState.Catched;
             transform.SetParent(player.transform);
             transform.position = player.transform.position;
+            transform.localScale = Vector3.one;
             gameObject.SetActive(false);
             CloseUi();
         }
