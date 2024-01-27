@@ -34,6 +34,9 @@ public class VegetableSpawner : MonoSingleton<VegetableSpawner>
 
         if (id == -1) { return null; }
 
+        GameObject go = Instantiate(data.prefab, Vector3.zero, Quaternion.identity);
+        var collider2d = go.GetComponent<CapsuleCollider2D>();
+
         int loopCount = 0;
         Vector3 pos = GetSpawnPosition(id);
 
@@ -41,15 +44,17 @@ public class VegetableSpawner : MonoSingleton<VegetableSpawner>
         {
             pos = GetSpawnPosition(id);
             loopCount++;
-        } while (!_mapCollider.bounds.Contains(pos) && !Physics.CheckBox(pos, data.prefab.transform.localScale * 2) && loopCount < 100);
+        } while (!_mapCollider.bounds.Contains(pos) && !Physics.CheckBox(pos, collider2d.size) && loopCount < 100);
 
         if (loopCount == 100)
         {
             Debug.LogError("Failed to get position inside of map");
+            DestroyImmediate(go);
             return null;
         }
 
-        GameObject go = Instantiate(data.prefab, pos, Quaternion.identity);
+        go.transform.position = pos;
+
 
         _spawnedInfo[id].Add(go);
 
