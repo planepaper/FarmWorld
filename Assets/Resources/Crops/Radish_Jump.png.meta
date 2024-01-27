@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ed4aba29be3df4d55af6b3c79f1b9e78
+guid: 2f0b4f0bf51df4e6abc553e8b79caccb
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 128
+    maxTextureSize: 256
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -136,7 +136,70 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Potato_Idle_0
+      name: Radish_Jump_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9d771fc569424bfeb0155cfaa559d53
+      internalID: -426264113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Radish_Jump_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd7c6c4a177e54032ab0fafe8cd8ea97
+      internalID: -732254740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Radish_Jump_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 893ac5b9446684df0ba1a9db6105435e
+      internalID: -1309573030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Radish_Jump_3
       rect:
         serializedVersion: 2
         x: 0
@@ -150,14 +213,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb5307dbbe7ec40fea16cf522206434a
-      internalID: 1862579
+      spriteID: e8e9f364f8e804b20a63bc023bd3081a
+      internalID: 1066015410
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Potato_Idle_1
+      name: Radish_Jump_4
       rect:
         serializedVersion: 2
         x: 64
@@ -171,50 +234,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5bba22e946d4943c6bf80429a97ca1e2
-      internalID: -862680415
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Potato_Idle_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 979fe72631b7c4e97b9d3cc397636e2b
-      internalID: 622903820
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Potato_Idle_3
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 82afc1b110237419f9031cd858fd6d19
-      internalID: -647376665
+      spriteID: f3dbc5e3dbcc9406696017d791fec91b
+      internalID: -1932005959
       vertices: []
       indices: 
       edges: []
@@ -230,10 +251,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Potato_Idle_0: 1862579
-      Potato_Idle_1: -862680415
-      Potato_Idle_2: 622903820
-      Potato_Idle_3: -647376665
+      Radish_Jump_0: -426264113
+      Radish_Jump_1: -732254740
+      Radish_Jump_2: -1309573030
+      Radish_Jump_3: 1066015410
+      Radish_Jump_4: -1932005959
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
