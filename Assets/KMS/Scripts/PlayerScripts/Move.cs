@@ -47,10 +47,23 @@ public class Move : MonoBehaviour
         {
             playerImage.flipX = true;
         }
+        if( inputY >0)
+        {
+            transform.localScale = new Vector3(-1f, 1f, 1f);
+        }
+        else
+        {
+            transform.localScale = new Vector3(1f, 1f, 1f);
+        }
+        //else
+        //{
+        //    transform.localScale *= -1;
+        //}
 
         if (input.magnitude > 0)
         {
             playerController.ChangePlayerState(playerActionState.Walk);
+            playerController.ChangeMove(inputY, inputX);
         }
         else
         {

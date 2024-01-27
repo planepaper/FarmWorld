@@ -132,4 +132,9 @@ public class PlayerController : MonoBehaviour
 
         transform.DetachChildren();
     }
+
+    public void ChangeMove(float value, float value2)
+    {
+        playerAnimation.SetMoveY(value, value2);
+    }
 }

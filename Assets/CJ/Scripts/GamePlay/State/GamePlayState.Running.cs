@@ -36,8 +36,8 @@ namespace CJ.Scripts.GamePlay.State
 
             if (_playTime >= GameRule.Instance.gamePlayTime)
             {
-                nextStatus = new GamePlayState_Finish();
-                nextEvent = Event.Exit;
+                //nextStatus = new GamePlayState_Finish();
+                //nextEvent = Event.Exit;
             }
         }
 
