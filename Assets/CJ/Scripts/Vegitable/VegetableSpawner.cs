@@ -8,6 +8,7 @@ using Math = System.Math;
 public class VegetableSpawner : MonoSingleton<VegetableSpawner>
 {
     private Dictionary<int, List<GameObject>> _spawnedInfo = new Dictionary<int, List<GameObject>>();
+    [SerializeField] private BoxCollider2D _mapCollider;
 
     public GameObject SpawnVegetable()
     {
@@ -33,7 +34,21 @@ public class VegetableSpawner : MonoSingleton<VegetableSpawner>
 
         if (id == -1) { return null; }
 
+        int loopCount = 0;
         Vector3 pos = GetSpawnPosition(id);
+
+        do
+        {
+            pos = GetSpawnPosition(id);
+            loopCount++;
+        } while (!_mapCollider.bounds.Contains(pos) && !Physics.CheckBox(pos, data.prefab.transform.localScale * 2) && loopCount < 100);
+
+        if (loopCount == 100)
+        {
+            Debug.LogError("Failed to get position inside of map");
+            return null;
+        }
+
         GameObject go = Instantiate(data.prefab, pos, Quaternion.identity);
 
         _spawnedInfo[id].Add(go);
