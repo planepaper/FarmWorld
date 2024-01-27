@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ed4aba29be3df4d55af6b3c79f1b9e78
+guid: a59af0e62fb3441809248529b52f7b88
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 128
+    maxTextureSize: 256
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -136,7 +136,70 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Potato_Idle_0
+      name: Potato_Jump_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 263ae357c2a034e04b71fcbc1e7d587d
+      internalID: 1512934275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potato_Jump_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e76ac27074ac24d1bb4315df2fb3a3cb
+      internalID: 2111262060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potato_Jump_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cfa6231ee0dd4f5caad6399e8d029fb
+      internalID: 342240025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potato_Jump_3
       rect:
         serializedVersion: 2
         x: 0
@@ -150,14 +213,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb5307dbbe7ec40fea16cf522206434a
-      internalID: 1862579
+      spriteID: ea77dd3de42c94227ad9a6e8d8dfdfdb
+      internalID: -2009764450
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Potato_Idle_1
+      name: Potato_Jump_4
       rect:
         serializedVersion: 2
         x: 64
@@ -171,50 +234,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5bba22e946d4943c6bf80429a97ca1e2
-      internalID: -862680415
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Potato_Idle_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 979fe72631b7c4e97b9d3cc397636e2b
-      internalID: 622903820
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Potato_Idle_3
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 82afc1b110237419f9031cd858fd6d19
-      internalID: -647376665
+      spriteID: 9e6f8430d8a7c46799df02e717ba57ec
+      internalID: 1982669596
       vertices: []
       indices: 
       edges: []
@@ -230,10 +251,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Potato_Idle_0: 1862579
-      Potato_Idle_1: -862680415
-      Potato_Idle_2: 622903820
-      Potato_Idle_3: -647376665
+      Potato_Jump_0: 1512934275
+      Potato_Jump_1: 2111262060
+      Potato_Jump_2: 342240025
+      Potato_Jump_3: -2009764450
+      Potato_Jump_4: 1982669596
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
