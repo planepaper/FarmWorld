@@ -4,6 +4,7 @@ using CJ.Scripts.GamePlay.State;
 using CJ.Scripts.StockMarket;
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace CJ.Scripts.GamePlay
@@ -46,6 +47,11 @@ namespace CJ.Scripts.GamePlay
             {
                 inventory.Add(new InventorySlotData() { data = null, go = null });
             }
+        }
+
+        private void Start()
+        {
+            money = 0;
         }
 
         private void FixedUpdate()
@@ -116,6 +122,35 @@ namespace CJ.Scripts.GamePlay
             }
 
             return null;
+        }
+
+        public void SellInventoryCrops()
+        {
+            money += SumUpInventory();
+            FlushInventory();
+        }
+
+        private int SumUpInventory()
+        {
+            int sum = 0;
+            foreach (var slot in inventory)
+            {
+                if (slot.data != null)
+                {
+                    sum += stockMarket[slot.data.id].price;
+                }
+            }
+            return sum;
+        }
+
+        private void FlushInventory()
+        {
+            foreach (var slot in inventory)
+            {
+                slot.data = null;
+                slot.go = null;
+            }
+            OnInventorySlotUpdated?.Invoke(-1, null);
         }
     }
 }

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8397846439899514713}
   m_Layer: 0
   m_Name: Onion
-  m_TagString: Untagged
+  m_TagString: Crop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135,7 +135,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
+  returnSpeed: 1
+  vegeState: 0
   CanvasPrefab: {fileID: 5884774542416317307, guid: da41ee971d5eb4f4488fb22a7b48efa7, type: 3}
+  willEscapeTime: 0
 --- !u!95 &8397846439899514713
 Animator:
   serializedVersion: 5

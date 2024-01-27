@@ -49,7 +49,6 @@ public class TestVege : MonoBehaviour
     {
         if (vegeState == VegetableState.Stored)
         {
-            Debug.Log(timeForWaitingToEscape);
             timeForWaitingToEscape += Time.deltaTime;
             if (timeForWaitingToEscape > willEscapeTime)
             {
@@ -107,6 +106,7 @@ public class TestVege : MonoBehaviour
             vegeState = VegetableState.Catched;
             transform.SetParent(player.transform);
             transform.position = player.transform.position;
+            gameObject.SetActive(false);
             CloseUi();
         }
     }
@@ -117,6 +117,7 @@ public class TestVege : MonoBehaviour
         {
             vegeState = VegetableState.Idle;
             transform.SetParent(null);
+            gameObject.SetActive(true);
             OpenUi();
         }
     }
@@ -127,93 +128,15 @@ public class TestVege : MonoBehaviour
         {
             vegeState = VegetableState.Stored;
             transform.SetParent(null);
+            gameObject.SetActive(true);
             OpenUi();
-            //TODO(Seungpyo): Ready to Escape
+
             timeForWaitingToEscape = 0f;
         }
     }
 
-    // public void InteractionWork(Transform player)
-    // {
-    //     if (vegeState != VegetableState.Catched)
-    //     {
-    //         // 잡기가 실패하면 그냥 리턴
-    //         if (!GameManager.Instance.TryCatchCrop(id, gameObject))
-    //         {
-    //             return;
-    //         }
-
-    //         vegeState = VegetableState.Catched;
-    //         transform.SetParent(player.transform);
-    //         transform.position = player.transform.position;
-    //         CloseUi();
-
-
-    //     }
-    //     else if (vegeState == VegetableState.Catched)
-    //     {
-    //         vegeState = VegetableState.Idle;
-    //         transform.SetParent(null);
-    //         OpenUi();
-    //     }
-    //     else if ()
-
-    //         Debug.Log(vegeState.ToString());
-    // }
+    public void DestoryIt()
+    {
+        Destroy(this);
+    }
 }
-
-//public Vector3 Random(Vector3 myVector, Vector3 min, Vector3 max)
-//{
-//    return myVector = new Vector3(UnityEngine.Random.Range(min.x, max.x), UnityEngine.Random.Range(min.y, max.y), UnityEngine.Random.Range(0, 0));
-//}
-
-//private VegiState vegiState = VegiState.Idle;
-//private GameObject CanvasPrefab;
-
-//private Canvas UiCanvas;
-//public List<Canvas> UiPool;
-//private Canvas currentCanvas;
-
-//private void Start()
-//{
-//    UiCanvas = null;
-//}
-
-//public void OpenUi()
-//{
-//    currentCanvas = UiPool.Count > 0 ? UiPool[0] : IncreaseList();
-//    UiCanvas = currentCanvas;
-//    UiPool.Remove(UiPool[0]);
-
-//    if (UiCanvas.enabled == false)
-//    {
-//        UiCanvas.enabled = true;
-//    }
-//}
-//public void CloseUi()
-//{
-//    //if (currentCanvas != null)
-//    //{
-//    //    UiPool.Add(currentCanvas);
-//    //}
-//    UiPool.Add(currentCanvas);
-
-//    if (UiCanvas.enabled == true)
-//    {
-//        UiCanvas.enabled = false;
-//    }
-//}
-
-//public void InteractionWork(Transform player)
-//{
-//    transform.SetParent(player.transform);
-//    CloseUi();
-//}
-
-//Canvas IncreaseList()
-//{
-//    var canvas = Instantiate(CanvasPrefab.GetComponent<Canvas>());
-//    UiPool.Add(canvas);
-//    canvas.enabled = false;
-//    return canvas;
-//}

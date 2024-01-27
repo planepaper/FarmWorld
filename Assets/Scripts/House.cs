@@ -13,7 +13,6 @@ public class House : MonoSingleton<House>
 
     public Canvas CanvasPrefab;
     private Canvas currentCanvas = null;
-    List<TestVege> testVeges = new List<TestVege>();
 
     private void OnCollisionEnter2D(Collision2D other)
     {

@@ -4,6 +4,13 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 
 using CJ.Scripts.GamePlay;
+using CJ.Scripts.StockMarket.UI;
+using CJ.Scripts.StockMarket;
+
+enum PlayerPlace
+{
+    Outside, Fence, House
+}
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,7 +18,9 @@ public class PlayerController : MonoBehaviour
     PlayerData playerData;
     Move playerMove;
     playerActionState currentState = playerActionState.Idle;
-    bool isHeInFence = false;
+
+    [SerializeField]
+    PlayerPlace playerPlace = PlayerPlace.Outside;
 
     private TestVege nearTarget = null;
 
@@ -26,24 +35,40 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.TryGetComponent(out TestVege vege))
+        if (other.tag == "Crop")
         {
-            nearTarget = vege;
+            nearTarget = other.gameObject.GetComponent<TestVege>();
         }
-        if (other.tag == "Fence")
+        else if (other.tag == "Fence")
         {
-            isHeInFence = true;
+            playerPlace = PlayerPlace.Fence;
         }
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.TryGetComponent(out TestVege vege))
+        if (other.tag == "Crop")
         {
             nearTarget = null;
         }
-        if (other.tag == "Fence")
+        else if (other.tag == "Fence")
         {
-            isHeInFence = false;
+            playerPlace = PlayerPlace.Outside;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.collider.tag == "House")
+        {
+            playerPlace = PlayerPlace.House;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        if (other.collider.tag == "House")
+        {
+            playerPlace = PlayerPlace.Fence;
         }
     }
 
@@ -62,17 +87,25 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                var go = GameManager.Instance.TryUnCatchCrops();
-                if (go != null)
+                if (playerPlace == PlayerPlace.House)
                 {
-                    if (isHeInFence)
+                    GameManager.Instance.SellInventoryCrops();
+                    DeleteAllTestVeges();
+                }
+                else
+                {
+                    var go = GameManager.Instance.TryUnCatchCrops();
+                    if (go != null)
                     {
-                        go.GetComponent<TestVege>().DropItOnInnerFence();
-
-                    }
-                    else
-                    {
-                        go.GetComponent<TestVege>().DropItToOutside();
+                        var vegetableOnHand = go.GetComponent<TestVege>();
+                        if (playerPlace == PlayerPlace.Fence)
+                        {
+                            vegetableOnHand.DropItOnInnerFence();
+                        }
+                        else
+                        {
+                            vegetableOnHand.DropItToOutside();
+                        }
                     }
                 }
             }
@@ -88,5 +121,15 @@ public class PlayerController : MonoBehaviour
     {
         currentState = playerAnimation.GetPlayerState();
         return currentState;
+    }
+
+    void DeleteAllTestVeges()
+    {
+        foreach (Transform child in transform)
+        {
+            Destroy(child.gameObject);
+        }
+
+        transform.DetachChildren();
     }
 }
