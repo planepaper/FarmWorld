@@ -20,7 +20,7 @@ public class SpwanTrees : MonoBehaviour
             treeObj.GetComponent<Tree>().Init(x,y);
             treeObj.GetComponent<Tree>().SetRandomAction(() =>
             {
-                RandomPose(spwanArea);
+                treeObj.transform.position = RandomPose(spwanArea);
             });
 
             treeObj.transform.position = RandomPose(spwanArea);

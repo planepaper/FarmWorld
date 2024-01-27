@@ -136,13 +136,55 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Fence_0
+      name: Fence_Big_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 13
+        y: 358
+        width: 127
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a94493c1c41acdd4ebab89375b933bf3
+      internalID: -29822227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fence_Big_1
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 427
+        width: 233
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c73f1c849784ef640b1d67a8ec1d14c0
+      internalID: 514784707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fence_Big_2
+      rect:
+        serializedVersion: 2
+        x: 401
         y: 352
-        width: 550
-        height: 160
+        width: 132
+        height: 89
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +192,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9500dd309a8084f64b1a13f22ba33993
-      internalID: 618067930
+      spriteID: 878807161ba668746b1274309906f9cb
+      internalID: 1339318110
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fence_1
+      name: Fence_Big_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 184
-        width: 550
-        height: 163
+        x: 4
+        y: 262
+        width: 126
+        height: 85
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,14 +213,56 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cd05ae706537843b5ab5af51bb79e19b
-      internalID: 1510800784
+      spriteID: d45adf873b1a2d84e866d5d9a9d0ce1b
+      internalID: -1603124362
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fence_2
+      name: Fence_Big_4
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 184
+        width: 259
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38f59b0bd75b16049908489f5b7f900d
+      internalID: -1848445766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fence_Big_5
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 255
+        width: 127
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 243ad03b45441f84abff87e5c872e01a
+      internalID: -526416880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fence_Big_6
       rect:
         serializedVersion: 2
         x: 271
@@ -192,8 +276,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69efd5923afb743c79bc997fdf4e8d99
-      internalID: -789135029
+      spriteID: c652dfb2025b7424d812b24347cef142
+      internalID: 1203105113
       vertices: []
       indices: 
       edges: []
@@ -209,9 +293,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Fence_0: 618067930
-      Fence_1: 1510800784
-      Fence_2: -789135029
+      Fence_Big_0: -29822227
+      Fence_Big_1: 514784707
+      Fence_Big_2: 1339318110
+      Fence_Big_3: -1603124362
+      Fence_Big_4: -1848445766
+      Fence_Big_5: -526416880
+      Fence_Big_6: 1203105113
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
