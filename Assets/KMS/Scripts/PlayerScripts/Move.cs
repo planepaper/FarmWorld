@@ -1,9 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Move : MonoBehaviour
 {
+    [SerializeField]
+    SpriteRenderer background;
+
+    [SerializeField]
+    private float minX, maxX, minY, maxY;
+
     Vector3 moveVelocity;
 
     private float velocityLimit = 0.3f;
@@ -16,6 +23,12 @@ public class Move : MonoBehaviour
 
     private void Start()
     {
+        minX = background.transform.position.x - background.size.x / 2;
+        maxX = background.transform.position.x + background.size.x / 2;
+
+        minY = background.transform.position.y - background.size.y / 2;
+        maxY = background.transform.position.y + background.size.y / 2;
+
         playerController = GetComponent<PlayerController>();
 
         playerImage = GetComponent<SpriteRenderer>();
@@ -47,7 +60,7 @@ public class Move : MonoBehaviour
         {
             playerImage.flipX = true;
         }
-        if( inputY >0)
+        if (inputY > 0)
         {
             transform.localScale = new Vector3(-1f, 1f, 1f);
         }
@@ -76,6 +89,11 @@ public class Move : MonoBehaviour
                                      0);
 
         transform.position += moveVelocity * Time.deltaTime;
+
+        float clampedX = Mathf.Clamp(transform.position.x, minX, maxX);
+        float clampedY = Mathf.Clamp(transform.position.y, minY, maxY);
+        transform.position = new Vector3(clampedX, clampedY, transform.position.z);
+
         //if (moveVelocity. < velocityLimit)
         //{
         //    rigid.velocity = Vector3.zero;
