@@ -1,3 +1,4 @@
+using CJ.Scripts.Audio;
 using CJ.Scripts.Crops;
 using CJ.Scripts.StockMarket;
 using UnityEngine;
@@ -39,6 +40,8 @@ namespace CJ.Scripts.GamePlay.State
             {
                 Debug.LogError("Failed to spawn vegetable!");
             }
+
+            BgmManager.Instance.Play(BgmType.Main);
 
             // 초기화 이후에는 바로 Ready 상태로 이동
             nextStatus = new GamePlayState_Ready();

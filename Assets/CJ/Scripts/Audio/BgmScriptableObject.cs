@@ -8,6 +8,8 @@ namespace CJ.Scripts.Audio
 {
     public enum BgmType : uint
     {
+        Main,
+        Ending,
         Count
     }
 

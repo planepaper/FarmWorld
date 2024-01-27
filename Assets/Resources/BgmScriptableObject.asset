@@ -12,4 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2435eeccad66490c9e45426f3caade69, type: 3}
   m_Name: BgmScriptableObject
   m_EditorClassIdentifier: 
-  _pairs: []
+  _pairs:
+  - type: 0
+    clip: {fileID: 8300000, guid: 873381ac851134dd8a00fc4da4e271f5, type: 3}
+    pitch: 1
+    volume: 1
+    loop: 1
+  - type: 1
+    clip: {fileID: 8300000, guid: a35af764944c2447eb9f5f9b6c3be695, type: 3}
+    pitch: 1
+    volume: 1
+    loop: 1

@@ -12,4 +12,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce4372797ad44137b87033fbf93d23e0, type: 3}
   m_Name: SfxScriptableObject
   m_EditorClassIdentifier: 
-  _pairs: []
+  _pairs:
+  - type: 0
+    clip: {fileID: 8300000, guid: 243a97aa9e2694a54bca39f9dc91e3d6, type: 3}
+    pitch: 1
+    volume: 1
+    loop: 0
+  - type: 1
+    clip: {fileID: 8300000, guid: 40ad184cc163243bdbdc53941a1db9dc, type: 3}
+    pitch: 1
+    volume: 1
+    loop: 0
+  - type: 2
+    clip: {fileID: 8300000, guid: ae1ddd45d45a14c37814ef90df82daf7, type: 3}
+    pitch: 1
+    volume: 1
+    loop: 0
+  - type: 3
+    clip: {fileID: 8300000, guid: 898b44bcec17248c08c1e465f89e69f7, type: 3}
+    pitch: 1
+    volume: 1
+    loop: 0
+  - type: 4
+    clip: {fileID: 8300000, guid: 7b539a4e2688142809671ecf50aaee69, type: 3}
+    pitch: 1
+    volume: 1
+    loop: 0
+  - type: 5
+    clip: {fileID: 8300000, guid: ce6ae77aa77bd4580af201c991c43d51, type: 3}
+    pitch: 1
+    volume: 1
+    loop: 0
+  - type: 6
+    clip: {fileID: 8300000, guid: 746121c7e53de46d2b7c431e09057569, type: 3}
+    pitch: 1
+    volume: 1
+    loop: 0
+  - type: 7
+    clip: {fileID: 8300000, guid: dd18f32cb3314411195bc935c43c3ce5, type: 3}
+    pitch: 1
+    volume: 1
+    loop: 0

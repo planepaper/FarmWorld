@@ -7,6 +7,14 @@ namespace CJ.Scripts.Audio
 {
     public enum SfxType : uint
     {
+        CropHarvest,
+        CropStore,
+        CropJump,
+        CropSell,
+        Run,
+        Button,
+        TimeWarning1,
+        TimeWarning2,
         Count,
     }
 

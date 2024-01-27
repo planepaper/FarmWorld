@@ -294,8 +294,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uC591\uD30C"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fda71ec0c1ba84ed4a1d4a502be88c26, type: 2}
-  m_sharedMaterial: {fileID: -1151206046372562920, guid: fda71ec0c1ba84ed4a1d4a502be88c26, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 13a633be63131a3499b488083d60639b, type: 2}
+  m_sharedMaterial: {fileID: -1300449169854778441, guid: 13a633be63131a3499b488083d60639b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
