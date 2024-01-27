@@ -22,7 +22,7 @@ MonoBehaviour:
     maxEscapeTime: 60
     maximumSpawnCount: 25
     randomGap: 100
-    icon: {fileID: 195316444, guid: acba86094186a44c6bdb1c235857569f, type: 3}
+    icon: {fileID: -1198413192, guid: 2a0a110aa01db49d485c95b9210efc9a, type: 3}
     animController: {fileID: 9100000, guid: 9d821ebe2ed694606a10e6decd1d9288, type: 2}
   - id: 1
     name: "\uAC10\uC790"
@@ -33,8 +33,8 @@ MonoBehaviour:
     maxEscapeTime: 55
     maximumSpawnCount: 20
     randomGap: 100
-    icon: {fileID: 0}
-    animController: {fileID: 0}
+    icon: {fileID: -995239499, guid: 2a0a110aa01db49d485c95b9210efc9a, type: 3}
+    animController: {fileID: 9100000, guid: 9d2c4f373ae104351a0931f6c0023261, type: 2}
   - id: 2
     name: "\uB2F9\uADFC"
     initValue: 350
@@ -44,8 +44,8 @@ MonoBehaviour:
     maxEscapeTime: 50
     maximumSpawnCount: 15
     randomGap: 100
-    icon: {fileID: 0}
-    animController: {fileID: 0}
+    icon: {fileID: -158140033, guid: 2a0a110aa01db49d485c95b9210efc9a, type: 3}
+    animController: {fileID: 9100000, guid: 78cfe8b170ddf45d892e8e80f4ea449d, type: 2}
   - id: 3
     name: "\uBB34"
     initValue: 800
@@ -55,8 +55,8 @@ MonoBehaviour:
     maxEscapeTime: 45
     maximumSpawnCount: 10
     randomGap: 100
-    icon: {fileID: 0}
-    animController: {fileID: 0}
+    icon: {fileID: -751755083, guid: 2a0a110aa01db49d485c95b9210efc9a, type: 3}
+    animController: {fileID: 9100000, guid: 625d6cad99dbd4df290d2a32ed09afcd, type: 2}
   - id: 4
     name: "\uC218\uBC15"
     initValue: 1000
@@ -66,5 +66,5 @@ MonoBehaviour:
     maxEscapeTime: 40
     maximumSpawnCount: 5
     randomGap: 100
-    icon: {fileID: -1948982313, guid: 0dd42711bf09f4df2962ee22d00bb5c2, type: 3}
+    icon: {fileID: 1988418605, guid: 2a0a110aa01db49d485c95b9210efc9a, type: 3}
     animController: {fileID: 9100000, guid: 4bf2765d378bf4dd0af0438df2717419, type: 2}
