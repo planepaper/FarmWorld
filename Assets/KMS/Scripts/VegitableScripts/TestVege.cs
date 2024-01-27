@@ -1,3 +1,4 @@
+using CJ.Scripts.Audio;
 using CJ.Scripts.GamePlay;
 using System;
 using UnityEngine;
@@ -14,6 +15,10 @@ public enum VegetableState
 
 public class TestVege : MonoBehaviour
 {
+    private static int IdleAnim = Animator.StringToHash("Idle");
+    private static int GroundAnim = Animator.StringToHash("Ground");
+    private static int JumpAnim = Animator.StringToHash("Jump");
+
     [SerializeField]
     private int id;
     private CropData cropData;
@@ -33,11 +38,17 @@ public class TestVege : MonoBehaviour
     private float willEscapeTime;
 
     private Canvas currentCanvas = null;
+    private Animator _anim;
+
+    private bool _playJumpAnim = false;
 
     private void Start()
     {
         //var vegeInstance = Instantiate(gameObject,Random(InitPosition ,Vector3.zero,Vector3.one),Quaternion.identity);
         //InitPosition = vegeInstance.transform.position;
+
+        _anim = GetComponent<Animator>();
+        _anim.Play(GroundAnim);
 
         initPosition = transform.position;
         cropData = CropScriptableObject.Instance.GetData(id);
@@ -65,8 +76,21 @@ public class TestVege : MonoBehaviour
 
     private void StartToEscape()
     {
+        if (!_playJumpAnim)
+        {
+            _playJumpAnim = true;
+            _anim.Play(JumpAnim);
+        }
+
         transform.position
         = Vector3.MoveTowards(transform.position, initPosition, returnSpeed * Time.deltaTime);
+
+        if (Vector3.Distance(transform.position, initPosition) < float.Epsilon)
+        {
+            vegeState = VegetableState.Hide;
+            _playJumpAnim = false;
+            _anim.Play(GroundAnim);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -120,6 +144,8 @@ public class TestVege : MonoBehaviour
             transform.SetParent(null);
             gameObject.SetActive(true);
             OpenUi();
+
+            _anim.Play(IdleAnim);
         }
     }
 
@@ -139,5 +165,10 @@ public class TestVege : MonoBehaviour
     public void DestoryIt()
     {
         Destroy(this);
+    }
+
+    public void OnJump()
+    {
+        SfxManager.Instance.Play(SfxType.CropJump);
     }
 }
