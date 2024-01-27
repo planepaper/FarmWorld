@@ -6,19 +6,24 @@ public enum VegetableState
     Idle,
     Run,
     Catched,
+    Stored,
     Hide
 }
 
-public class TestVege : MonoBehaviour, iInteraction
+public class TestVege : MonoBehaviour
 {
-    [SerializeField] private int id;
+    [SerializeField]
+    private int id;
 
     private Vector3 InitPosition;
+
+    [SerializeField]
     private VegetableState vegeState = VegetableState.Idle;
     public Canvas CanvasPrefab;
-    private int price;
 
-    Action removeAction;
+    private int price;
+    private float timeForWaitingToEscape;
+
     private Canvas currentCanvas = null;
 
     private void Start()
@@ -27,11 +32,35 @@ public class TestVege : MonoBehaviour, iInteraction
         //InitPosition = vegeInstance.transform.position;
     }
 
-
-    public void RemoveAction(Action action)
+    private void Update()
     {
-        removeAction = action;
+        if (vegeState == VegetableState.Stored)
+        {
+            timeForWaitingToEscape += Time.deltaTime;
+        }
     }
+
+    public int GetID()
+    {
+        return id;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+        {
+            OpenUi();
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+        {
+            CloseUi();
+        }
+    }
+
     public void OpenUi()
     {
         if (currentCanvas == null)
@@ -47,33 +76,66 @@ public class TestVege : MonoBehaviour, iInteraction
         currentCanvas.enabled = false;
     }
 
-    public void InteractionWork(Transform player)
+    public void PickIt(Transform player)
     {
-        if(vegeState != VegetableState.Catched)
+        if (vegeState != VegetableState.Catched)
         {
-            // 잡기가 실패하면 그냥 리턴
-            if (!GameManager.Instance.TryCatchCrop(id, gameObject))
-            {
-                return;
-            }
-
             vegeState = VegetableState.Catched;
             transform.SetParent(player.transform);
             transform.position = player.transform.position;
             CloseUi();
-
-
         }
-        else if(vegeState == VegetableState.Catched)
+    }
+
+    public void DropItToOutside()
+    {
+        if (vegeState == VegetableState.Catched)
         {
             vegeState = VegetableState.Idle;
             transform.SetParent(null);
-            removeAction.Invoke();
             OpenUi();
         }
-
-        Debug.Log(vegeState.ToString());
     }
+
+    public void DropItOnInnerFence()
+    {
+        if (vegeState == VegetableState.Catched)
+        {
+            vegeState = VegetableState.Stored;
+            transform.SetParent(null);
+            OpenUi();
+            //TODO(Seungpyo): Ready to Escape
+            timeForWaitingToEscape = 0f;
+        }
+    }
+
+    // public void InteractionWork(Transform player)
+    // {
+    //     if (vegeState != VegetableState.Catched)
+    //     {
+    //         // 잡기가 실패하면 그냥 리턴
+    //         if (!GameManager.Instance.TryCatchCrop(id, gameObject))
+    //         {
+    //             return;
+    //         }
+
+    //         vegeState = VegetableState.Catched;
+    //         transform.SetParent(player.transform);
+    //         transform.position = player.transform.position;
+    //         CloseUi();
+
+
+    //     }
+    //     else if (vegeState == VegetableState.Catched)
+    //     {
+    //         vegeState = VegetableState.Idle;
+    //         transform.SetParent(null);
+    //         OpenUi();
+    //     }
+    //     else if ()
+
+    //         Debug.Log(vegeState.ToString());
+    // }
 
     public void Sell()
     {
