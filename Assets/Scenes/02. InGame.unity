@@ -6219,6 +6219,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2020940383}
   - component: {fileID: 2020940382}
+  - component: {fileID: 2020940384}
+  - component: {fileID: 2020940385}
   m_Layer: 0
   m_Name: House
   m_TagString: House
@@ -6293,6 +6295,80 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &2020940384
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020940381}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 8, y: 8}
+    newSize: {x: 8, y: 8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 2.5252473, y: -0.53531146}
+      - {x: 2.625, y: -0.3125}
+      - {x: 1.6875, y: 1.25}
+      - {x: -0.5, y: 2.4375}
+      - {x: -0.875, y: 2.4375}
+      - {x: -1.25, y: 2.1875}
+      - {x: -1.75, y: 1.4375}
+      - {x: -2.4494314, y: 0.2563727}
+      - {x: -2.875, y: -0.5625}
+      - {x: -2.4964697, y: -0.59957665}
+      - {x: -1.5941056, y: -0.62817883}
+      - {x: -0.83739626, y: -0.7258145}
+      - {x: -0.038490474, y: -0.85575867}
+      - {x: 1.4071329, y: -0.6901519}
+      - {x: 2.0995767, y: -0.7106309}
+      - {x: 2.4542732, y: -0.6820288}
+  m_UseDelaunayMesh: 0
+--- !u!114 &2020940385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020940381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62b98ca7bd4944fde9cf121f73c15bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CanvasPrefab: {fileID: 5884774542416317307, guid: da41ee971d5eb4f4488fb22a7b48efa7, type: 3}
 --- !u!1 &2057937236
 GameObject:
   m_ObjectHideFlags: 0
