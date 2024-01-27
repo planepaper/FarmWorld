@@ -28,7 +28,7 @@ namespace CJ.Scripts.GamePlay.UI
             if (!GameManager.Instance.isRunning) return;
 
             var time = (GameManager.Instance.state as GamePlayState_Running).playTime;
-            text.text = $"{(time / 60).ToString("00")}:{(time % 60).ToString("00")}";
+            text.text = $"{Mathf.Floor(time / 60).ToString("00")}:{Mathf.Floor(time % 60).ToString("00")}";
         }
     }
 }
