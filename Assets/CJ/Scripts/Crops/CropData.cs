@@ -15,6 +15,7 @@ namespace CJ.Scripts.Crops
         public int minEscapeTime;
         public int maxEscapeTime;
         public int maximumSpawnCount;
+        public int randomGap;
 
         [Header("Graphics Data")]
         public Sprite icon;

@@ -50,10 +50,10 @@ namespace CJ.Scripts.GamePlay.State
                 switch (stock.lastPriceStatus)
                 {
                     case PriceStatus.Up:
-                        stock.price += Random.Range(0, 100);
+                        stock.price += Random.Range(0, data.randomGap);
                         break;
                     case PriceStatus.Down:
-                        stock.price -= Random.Range(0, 100);
+                        stock.price -= Random.Range(0, data.randomGap);
                         break;
                 }
 
