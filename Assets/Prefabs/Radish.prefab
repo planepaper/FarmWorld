@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8782800606678779065}
   m_Layer: 0
   m_Name: Radish
-  m_TagString: Untagged
+  m_TagString: Crop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,8 +100,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 3
+  returnSpeed: 2
   vegeState: 0
   CanvasPrefab: {fileID: 5884774542416317307, guid: da41ee971d5eb4f4488fb22a7b48efa7, type: 3}
+  willEscapeTime: 0
 --- !u!70 &7111799139295228580
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
