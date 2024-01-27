@@ -4295,7 +4295,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1352550955}
-  - component: {fileID: 1352550956}
   m_Layer: 5
   m_Name: Time
   m_TagString: Untagged
@@ -4323,20 +4322,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1352550956
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1352550954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab8936f856de43eaaf7bfd096a51167c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: {fileID: 2057937238}
-  slider: {fileID: 0}
 --- !u!1 &1404937790
 GameObject:
   m_ObjectHideFlags: 0
@@ -5495,6 +5480,7 @@ GameObject:
   - component: {fileID: 1746525102}
   - component: {fileID: 1746525101}
   - component: {fileID: 1746525100}
+  - component: {fileID: 1746525103}
   m_Layer: 5
   m_Name: MoneyBar
   m_TagString: Untagged
@@ -5587,6 +5573,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1746525098}
   m_CullTransparentMesh: 1
+--- !u!114 &1746525103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1746525098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7e5b13d68ed144768a92e90d3248399, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1348188782}
 --- !u!1001 &1791415539
 PrefabInstance:
   m_ObjectHideFlags: 0
