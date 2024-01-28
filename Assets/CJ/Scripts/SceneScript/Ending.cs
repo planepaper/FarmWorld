@@ -7,9 +7,9 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Ending : MonoBehaviour, IPointerClickHandler
+public class Ending : MonoBehaviour
 {
-    [SerializeField] private GameObject[] contents;
+    [SerializeField] private GameObject credit;
     [SerializeField] private TMP_Text finalScore;
 
     private int contentCount = 0;
@@ -19,27 +19,17 @@ public class Ending : MonoBehaviour, IPointerClickHandler
     {
         BgmManager.Instance.Play(BgmType.Ending);
         finalScore.text = GameManager.Instance.money.ToString();
-
-        contents[contentCount].SetActive(true);
     }
 
-    void GoToMain()
+    public void GoToMain()
     {
+        SfxManager.Instance.Play(SfxType.Button);
         SceneManager.LoadScene(SceneType.MainMenu);
     }
 
-    public void OnPointerClick(PointerEventData eventData)
+    public void CreditOnOff(bool forward)
     {
-        contents[contentCount].SetActive(false);
-        contentCount++;
-
-        if (contentCount < contents.Length)
-        {
-            contents[contentCount].SetActive(true);
-        }
-        else
-        {
-            GoToMain();
-        }
+        SfxManager.Instance.Play(SfxType.Button);
+        credit.gameObject.SetActive(forward);
     }
 }
