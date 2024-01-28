@@ -80,6 +80,8 @@ public class TestVege : MonoBehaviour
         {
             _playJumpAnim = true;
             _anim.Play(JumpAnim);
+
+            GameManager.Instance.SubtractCropFromFence(this);
         }
 
         transform.position
