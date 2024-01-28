@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78c71e17e1604c548107a6e91caf190b, type: 3}
   m_Name: GameRule
   m_EditorClassIdentifier: 
-  _gamePlayTime: 300
-  _stockUpdateInterval: 1
+  _gamePlayTime: 10
+  _stockUpdateInterval: 15
   _maxInventorySlot: 5

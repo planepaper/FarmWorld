@@ -44,6 +44,8 @@ namespace CJ.Scripts.GamePlay
         private GamePlayState _status = new GamePlayState_Init();
         public GamePlayState state => _status;
 
+        public Ending endingObject;
+
         public bool isRunning => _status.GetType() == typeof(GamePlayState_Running);
 
         private void Awake()

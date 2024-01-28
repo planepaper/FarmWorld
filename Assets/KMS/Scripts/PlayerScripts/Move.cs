@@ -1,3 +1,4 @@
+using CJ.Scripts.GamePlay;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -43,6 +44,8 @@ public class Move : MonoBehaviour
 
     void PlayerMove()
     {
+        if (!GameManager.Instance.isRunning) return;
+
         moveVelocity = Vector3.zero;
 
         var inputX = Input.GetAxisRaw("Horizontal");

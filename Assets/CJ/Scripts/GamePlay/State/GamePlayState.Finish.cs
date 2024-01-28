@@ -12,7 +12,8 @@ namespace CJ.Scripts.GamePlay.State
     {
         protected override void Enter()
         {
-            SceneManager.LoadScene(SceneType.MainMenu);
+            GameManager.Instance.endingObject.gameObject.SetActive(true);
+            // SceneManager.LoadScene(SceneType.MainMenu);
         }
     }
 }

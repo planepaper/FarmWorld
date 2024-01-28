@@ -1286,7 +1286,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3cc737748194eb1bb1a0f4cd8f0dec1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _howToPlayObject: {fileID: 2097675620}
+  _howToPlayObject:
+  - {fileID: 2097675620}
+  - {fileID: 1659158878}
   _creditObject: {fileID: 2117024549}
 --- !u!4 &855129823
 Transform:
@@ -1887,15 +1889,15 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 855129822}
         m_TargetAssemblyTypeName: CJ.Scripts.SceneScript.MainMenu, Assembly-CSharp
-        m_MethodName: PlayGame
-        m_Mode: 1
+        m_MethodName: HowToPlayOnOff
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &934599180
 MonoBehaviour:
@@ -3860,15 +3862,15 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 855129822}
         m_TargetAssemblyTypeName: CJ.Scripts.SceneScript.MainMenu, Assembly-CSharp
-        m_MethodName: PlayGame
-        m_Mode: 1
+        m_MethodName: HowToPlayOnOff
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &1990717233
 MonoBehaviour:

@@ -8,8 +8,10 @@ namespace CJ.Scripts.SceneScript
 {
     public class MainMenu : MonoBehaviour
     {
-        [SerializeField] private GameObject _howToPlayObject;
+        [SerializeField] private GameObject[] _howToPlayObject;
         [SerializeField] private GameObject _creditObject;
+
+        private int currentHowToPlay = 0;
 
         private void Awake()
         {
@@ -18,18 +20,25 @@ namespace CJ.Scripts.SceneScript
 
         public void HowToPlayOnOff(bool forward)
         {
-            _howToPlayObject.SetActive(forward);
+            SfxManager.Instance.Play(SfxType.Button);
+
+            if (currentHowToPlay >= _howToPlayObject.Length)
+            {
+                SceneManager.LoadScene(SceneType.InGame);
+                return;
+            }
+
+            _howToPlayObject[currentHowToPlay].SetActive(false);
+            _howToPlayObject[currentHowToPlay++].SetActive(forward);
 
             if (forward)
             {
                 SfxManager.Instance.Play(SfxType.Button);
             }
-        }
-
-        public void PlayGame()
-        {
-            SfxManager.Instance.Play(SfxType.Button);
-            SceneManager.LoadScene(SceneType.InGame);
+            else
+            {
+                currentHowToPlay = 0;
+            }
         }
 
         public void CreditOnOff(bool forward)
