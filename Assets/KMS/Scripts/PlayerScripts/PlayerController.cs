@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     PlayerPlace playerPlace = PlayerPlace.Outside;
 
-    private TestVege nearTarget = null;
+    private List<TestVege> nearTarget = new List<TestVege>();
 
     public float _Speed { get => playerData.speed; }
 
@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.tag == "Crop")
         {
-            nearTarget = other.gameObject.GetComponent<TestVege>();
+            nearTarget.Add(other.gameObject.GetComponent<TestVege>());
         }
         else if (other.tag == "Fence")
         {
@@ -48,7 +48,13 @@ public class PlayerController : MonoBehaviour
     {
         if (other.tag == "Crop")
         {
-            nearTarget = null;
+            for (int i = 0; i < nearTarget.Count; i++)
+            {
+                if (ReferenceEquals(nearTarget[i], other.GetComponent<TestVege>()))
+                {
+                    nearTarget.RemoveAt(i);
+                }
+            }
         }
         else if (other.tag == "Fence")
         {
@@ -76,14 +82,15 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (nearTarget != null)
+            if (nearTarget.Count > 0)
             {
                 // 잡기가 실패하면 그냥 리턴
-                if (!GameManager.Instance.TryCatchCrop(nearTarget.GetID(), nearTarget.gameObject))
+                TestVege nearest = nearTarget[nearTarget.Count - 1];
+                if (!GameManager.Instance.TryCatchCrop(nearest.GetID(), nearest.gameObject))
                 {
                     return;
                 }
-                nearTarget.PickIt(transform);
+                nearest.PickIt(transform);
             }
             else
             {
