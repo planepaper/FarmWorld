@@ -20,6 +20,7 @@ namespace CJ.Scripts.GamePlay
         #region Game Data
 
         public float money;
+        private List<TestVege> fenceCrops = new List<TestVege>();
         public int totalCropCounts;
         public int[] cropCounts;
 
@@ -165,17 +166,38 @@ namespace CJ.Scripts.GamePlay
             OnInventorySlotUpdated?.Invoke(-1, null);
         }
 
-        public void AddCropToFence(int cropIndex)
+        public void AddCropToFence(TestVege testVege)
         {
+            for (int i = 0; i < fenceCrops.Count; i++)
+            {
+                if (ReferenceEquals(fenceCrops[i], testVege))
+                {
+                    return;
+                }
+            }
+            fenceCrops.Add(testVege);
+
+            int cropIndex = testVege.GetID();
             totalCropCounts++;
             cropCounts[cropIndex]++;
+
             OnCropCountUpdated?.Invoke(cropIndex);
         }
 
-        public void SubtractCropFromFence(int cropIndex)
+        public void SubtractCropFromFence(TestVege testVege)
         {
+            for (int i = 0; i < fenceCrops.Count; i++)
+            {
+                if (ReferenceEquals(fenceCrops[i], testVege))
+                {
+                    fenceCrops.RemoveAt(i);
+                }
+            }
+
+            int cropIndex = testVege.GetID();
             totalCropCounts--;
             cropCounts[cropIndex]--;
+
             OnCropCountUpdated?.Invoke(cropIndex);
         }
     }

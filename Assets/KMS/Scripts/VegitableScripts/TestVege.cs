@@ -101,7 +101,7 @@ public class TestVege : MonoBehaviour
         }
         if (other.tag == "Fence")
         {
-            GameManager.Instance.AddCropToFence(id);
+            GameManager.Instance.AddCropToFence(this);
         }
     }
 
@@ -113,7 +113,7 @@ public class TestVege : MonoBehaviour
         }
         if (other.tag == "Fence")
         {
-            GameManager.Instance.SubtractCropFromFence(id);
+            GameManager.Instance.SubtractCropFromFence(this);
         }
     }
 
@@ -164,7 +164,7 @@ public class TestVege : MonoBehaviour
         {
             vegeState = VegetableState.Stored;
             transform.SetParent(null);
-            gameObject.SetActive(true);
+            GetComponent<SpriteRenderer>().enabled = true;
             OpenUi();
 
             timeForWaitingToEscape = 0f;
