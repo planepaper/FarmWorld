@@ -99,6 +99,10 @@ public class TestVege : MonoBehaviour
         {
             OpenUi();
         }
+        if (other.tag == "Fence")
+        {
+            GameManager.Instance.AddCropToFence(id);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -106,6 +110,10 @@ public class TestVege : MonoBehaviour
         if (other.tag == "Player")
         {
             CloseUi();
+        }
+        if (other.tag == "Fence")
+        {
+            GameManager.Instance.SubtractCropFromFence(id);
         }
     }
 
@@ -128,17 +136,11 @@ public class TestVege : MonoBehaviour
     {
         if (vegeState != VegetableState.Catched)
         {
-            //HARD CODING!!!
-            if (vegeState == VegetableState.Stored)
-            {
-                GameManager.Instance.SubtractCropFromFence(id);
-            }
-
             vegeState = VegetableState.Catched;
             transform.SetParent(player.transform);
             transform.position = player.transform.position;
             transform.localScale = Vector3.one;
-            gameObject.SetActive(false);
+            GetComponent<SpriteRenderer>().enabled = false;
             CloseUi();
         }
     }
@@ -149,7 +151,7 @@ public class TestVege : MonoBehaviour
         {
             vegeState = VegetableState.Idle;
             transform.SetParent(null);
-            gameObject.SetActive(true);
+            GetComponent<SpriteRenderer>().enabled = true;
             OpenUi();
 
             _anim.Play(IdleAnim);
@@ -164,8 +166,6 @@ public class TestVege : MonoBehaviour
             transform.SetParent(null);
             gameObject.SetActive(true);
             OpenUi();
-
-            GameManager.Instance.AddCropToFence(id);
 
             timeForWaitingToEscape = 0f;
         }
